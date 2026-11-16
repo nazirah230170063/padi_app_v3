@@ -1,0 +1,15 @@
+
+# File rahasia
+secret.key
+.env
+
+# Database lokal
+*.db
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# File sistem
+.DS_Store
+Thumbs.db

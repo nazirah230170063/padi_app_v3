@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block c %}
+<table class="table table-striped bg-white align-middle"><tr><th>Foto</th><th>Waktu</th><th>Hasil</th><th>Keyakinan</th><th></th></tr>
+{% for r in rows %}<tr><td><img src="{{ url_for('static', filename='uploads/' + r.gambar) }}" height="48" class="rounded"></td><td>{{ r.created_at }}</td><td>{{ r.label }}</td><td>{{ '%.1f'|format(r.confidence*100) }}%</td><td><a href="{{ url_for('detail', i=r.id) }}">Detail</a></td></tr>{% else %}<tr><td colspan="5" class="text-muted">Belum ada pemeriksaan.</td></tr>{% endfor %}</table>{% endblock %}

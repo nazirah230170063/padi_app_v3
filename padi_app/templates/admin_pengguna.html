@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block c %}
+<table class="table table-striped bg-white"><tr><th>Nama</th><th>Email</th><th>Role</th><th>Daftar</th><th></th></tr>
+{% for u in rows %}<tr><td>{{ u.nama }}</td><td>{{ u.email }}</td><td>{{ u.role }}</td><td>{{ u.created_at }}</td><td>{% if u.id != user.id %}
+<form method="post" class="d-flex gap-1" onsubmit="return confirm('Yakin?')"><input type="hidden" name="t" value="{{ token() }}"><input type="hidden" name="id" value="{{ u.id }}"><button name="a" value="role" class="btn btn-sm btn-outline-secondary">Ubah role</button><button name="a" value="del" class="btn btn-sm btn-outline-danger">Hapus</button></form>{% endif %}</td></tr>{% endfor %}</table>{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block c %}
+<table class="table table-striped bg-white align-middle"><tr><th>Foto</th><th>Pengguna</th><th>Waktu</th><th>Hasil</th><th>Keyakinan</th><th></th></tr>
+{% for r in rows %}<tr><td><img src="{{ url_for('static', filename='uploads/' + r.gambar) }}" height="44" class="rounded"></td><td>{{ r.nama }}</td><td>{{ r.created_at }}</td><td>{{ r.label }}</td><td>{{ '%.1f'|format(r.confidence*100) }}%</td><td><a href="{{ url_for('detail', i=r.id) }}" class="btn btn-sm btn-outline-success">Detail</a>
+<form method="post" class="d-inline" onsubmit="return confirm('Hapus?')"><input type="hidden" name="t" value="{{ token() }}"><input type="hidden" name="id" value="{{ r.id }}"><button class="btn btn-sm btn-outline-danger">Hapus</button></form></td></tr>{% endfor %}</table>{% endblock %}

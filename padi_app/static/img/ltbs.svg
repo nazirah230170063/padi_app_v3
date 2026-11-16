@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 310" font-family="Segoe UI,Arial,sans-serif"><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#9a3b1a"/></marker></defs>
+<rect width="640" height="310" rx="14" fill="#f3f8ef"/><text x="320" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#245a33">Tampak atas: sistem pagar perangkap (TBS)</text>
+<rect x="24" y="48" width="396" height="200" rx="8" fill="#cfe6c3" stroke="#6fae52" stroke-width="2"/><text x="222" y="142" text-anchor="middle" font-size="15" font-weight="700" fill="#2e7d46">Sawah utama</text><text x="222" y="162" text-anchor="middle" font-size="12.5" fill="#2e7d46">(ditanam serempak, lebih lambat)</text>
+<rect x="448" y="62" width="168" height="130" fill="#8fcf6e" stroke="#2e7d46" stroke-width="2"/><text x="532" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#1f5c33">Tanaman perangkap</text><text x="532" y="140" text-anchor="middle" font-size="12" fill="#1f5c33">ditanam lebih awal</text>
+<rect x="438" y="52" width="188" height="150" fill="none" stroke="#7a4b1e" stroke-width="3" stroke-dasharray="9 4"/>
+<rect x="520" y="196" width="24" height="14" fill="#333"/><rect x="430" y="110" width="14" height="24" fill="#333"/>
+<rect x="438" y="252" width="188" height="40" rx="8" fill="#b8a27a"/><text x="532" y="276" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Semak / tanggul (habitat tikus)</text>
+<path d="M532 250L532 214" stroke="#9a3b1a" stroke-width="2.5" marker-end="url(#a)"/><text x="540" y="236" font-size="12" fill="#9a3b1a">tikus masuk bubu</text>
+<line x1="28" y1="268" x2="62" y2="268" stroke="#7a4b1e" stroke-width="3" stroke-dasharray="9 4"/><text x="70" y="272" font-size="12" fill="#444">Pagar plastik (tinggi sekitar 60 cm)</text>
+<rect x="28" y="282" width="14" height="14" fill="#333"/><text x="50" y="294" font-size="12" fill="#444">Bubu perangkap</text></svg>

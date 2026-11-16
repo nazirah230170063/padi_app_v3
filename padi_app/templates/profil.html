@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block c %}
+<form method="post" class="card card-body col-md-5"><input type="hidden" name="t" value="{{ token() }}"><label>Email</label><input class="form-control mb-2" value="{{ me.email }}" disabled><label>Nama</label><input class="form-control mb-2" name="nama" value="{{ me.nama }}" required><label>Password baru (opsional)</label><input class="form-control mb-3" type="password" name="password"><button class="btn btn-success">Simpan</button></form>{% endblock %}

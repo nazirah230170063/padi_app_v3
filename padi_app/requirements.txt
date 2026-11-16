@@ -1,0 +1,5 @@
+flask
+pillow
+numpy
+tensorflow
+keras>=3.13

@@ -1,0 +1,1 @@
+{% macro ph(name, alt='') %}{% set u = foto_url(name) %}{% if u %}<div class="ph"><img src="{{ u }}" alt="{{ alt }}" loading="lazy"></div>{% else %}<div class="ph ph-empty"><div><b>Foto belum ditambahkan</b><small>static/foto/{{ name }}</small></div></div>{% endif %}{% endmacro %}

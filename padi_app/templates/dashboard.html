@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block c %}
+<div class="row"><div class="col-md-3 mb-3"><div class="card text-bg-success card-body"><div class="small">Total pemeriksaan</div><div class="fs-1">{{ stat|sum(attribute='c') }}</div></div></div>
+{% for s in stat %}<div class="col-md-3 mb-3"><div class="card card-body"><div class="small text-muted">{{ s.label }}</div><div class="fs-1">{{ s.c }}</div></div></div>{% endfor %}</div>
+<a class="btn btn-success mb-3" href="{{ url_for('klasifikasi') }}">+ Klasifikasi baru</a><h5>Prediksi terakhir</h5>
+<table class="table table-sm bg-white">{% for r in last %}<tr><td>{{ r.created_at }}</td><td>{{ r.label }}</td><td>{{ '%.1f'|format(r.confidence*100) }}%</td><td><a href="{{ url_for('detail', i=r.id) }}">Detail</a></td></tr>{% endfor %}</table>{% endblock %}

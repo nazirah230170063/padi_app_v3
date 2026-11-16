@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block c %}
+<div class="row"><div class="col-md-5 mb-3"><img src="{{ url_for('static', filename='uploads/' + r.gambar) }}" class="img-fluid rounded"></div><div class="col-md-7">
+<p>Pemeriksa: <b>{{ r.nama }}</b><br>Waktu: {{ r.created_at }}<br>Hasil: <b>{{ r.label }}</b> ({{ '%.1f'|format(r.confidence*100) }}%)</p>
+{% for k in KELAS %}{% set v = probs[loop.index0]*100 %}<div class="small">{{ k }} - {{ '%.1f'|format(v) }}%</div><div class="progress mb-2"><div class="progress-bar bg-success" style="width:{{ v }}%"></div></div>{% endfor %}
+<form method="post" onsubmit="return confirm('Hapus data ini?')"><input type="hidden" name="t" value="{{ token() }}"><a class="btn btn-secondary" href="{{ url_for('riwayat') }}">Kembali</a> <button class="btn btn-outline-danger">Hapus</button></form></div></div>{% endblock %}

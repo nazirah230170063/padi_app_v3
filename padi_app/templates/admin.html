@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block c %}
+<div class="row"><div class="col-md-3 mb-3"><div class="card text-bg-success card-body"><div class="small">Pengguna</div><div class="fs-1">{{ n }}</div></div></div><div class="col-md-3 mb-3"><div class="card text-bg-dark card-body"><div class="small">Total prediksi</div><div class="fs-1">{{ stat|sum(attribute='c') }}</div></div></div>
+{% for s in stat %}<div class="col-md-3 mb-3"><div class="card card-body"><div class="small text-muted">{{ s.label }}</div><div class="fs-1">{{ s.c }}</div></div></div>{% endfor %}</div>
+<a class="btn btn-success" href="{{ url_for('admin_pengguna') }}">Kelola Pengguna</a> <a class="btn btn-outline-success" href="{{ url_for('admin_prediksi') }}">Kelola Data Prediksi</a>{% endblock %}

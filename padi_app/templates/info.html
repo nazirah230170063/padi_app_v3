@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block c %}{% from "_m.html" import ph %}
+<p class="lead-big">{{ p.lead }}</p><div class="row g-4"><div class="col-lg-9">
+{% for s in p.sections %}<section class="blk" id="s{{ loop.index }}"><h3>{{ s.h }}</h3>{% if s.intro %}<p class="intro">{{ s.intro }}</p>{% endif %}
+{% if s.fig %}<figure class="fig"><img src="{{ url_for('static', filename='img/' + s.fig[0]) }}" alt="{{ s.fig[1] }}"><figcaption>{{ s.fig[1] }}</figcaption></figure>{% endif %}
+{% if s.type == 'cards' %}<div class="row g-3">{% for i in s['items'] %}<div class="col-md-6 col-lg-{{ 12 // (s.cols or 2) }}"><div class="ix">{% if i.img %}{{ ph(i.img, i.t) }}{% endif %}<div class="bd"><h5>{{ i.t }}</h5><p>{{ i.d }}</p>{% if i.pts %}<ul class="pts">{% for x in i.pts %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}</div></div></div>{% endfor %}</div>
+{% elif s.type == 'facts' %}<div class="row g-3 facts">{% for i in s['items'] %}<div class="col-6 col-lg-3"><div class="f"><div class="v">{{ i.v }}</div><div class="d">{{ i.d }}</div></div></div>{% endfor %}</div>
+{% elif s.type == 'steps' %}<div class="mt-3">{% for i in s['items'] %}<div class="stp"><span class="n">{{ loop.index }}</span><b>{{ i.t }}</b><div class="text-muted">{{ i.d }}</div></div>{% endfor %}</div>
+{% elif s.type == 'table' %}<div class="table-responsive"><table class="table table-striped align-middle mb-0"><tr>{% for h in s.head %}<th>{{ h }}</th>{% endfor %}</tr>{% for r in s.rows %}<tr>{% for c in r %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</table></div>{% endif %}
+{% if s.note %}<div class="callout">{{ s.note }}</div>{% endif %}</section>{% endfor %}
+<div class="cta d-md-flex align-items-center justify-content-between"><div><h5 class="mb-1">Periksa kondisi tanaman Anda</h5><div>Gunakan klasifikasi citra untuk membantu deteksi dini.</div></div><a class="btn btn-light mt-3 mt-md-0" href="{{ url_for('klasifikasi') }}">Klasifikasi citra</a></div></div>
+<aside class="col-lg-3 d-none d-lg-block"><div class="toc"><b>Daftar isi</b>{% for s in p.sections %}<a href="#s{{ loop.index }}">{{ s.h }}</a>{% endfor %}</div></aside></div>{% endblock %}
